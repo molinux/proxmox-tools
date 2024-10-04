@@ -19,5 +19,11 @@ apt-get upgrade
 apt autoremote
 apt clean
 
+# remove ssh host keys
 rm /etc/ssh/ssh_host_*
+
+# truncate the machine-id file
 truncate -s 0 /etc/machine-id
+
+# remove ip addresses; change enp0s3 to your own interface name
+ip addr flush dev enp0s3
